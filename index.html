@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio website for Osama Hamada, a computer science student and developer building web applications and machine learning prediction systems."
+    />
+    <title>Osama Hamada | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="Osama Hamada home">
+        <span class="brand-mark">OH</span>
+        <span>Osama Hamada</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+        <i data-lucide="menu"></i>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Computer Science Student - Cairo, Egypt</p>
+          <h1>Building web apps and machine learning systems with practical product thinking.</h1>
+          <p class="hero-intro">
+            I am Osama Hamada, a Computer Science student at Misr International University focused on responsive web
+            platforms, backend workflows, databases, and prediction models that turn raw data into useful decisions.
+          </p>
+
+          <div class="hero-actions" aria-label="Portfolio actions">
+            <a class="button button-primary" href="#projects">
+              <i data-lucide="folder-code"></i>
+              View projects
+            </a>
+            <a class="button button-secondary" href="assets/Osama-Hamada-CV.docx">
+              <i data-lucide="download"></i>
+              Download CV
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-visual" aria-label="Osama Hamada profile summary">
+          <img src="assets/osama-github-avatar.png" alt="Osama Hamada GitHub profile avatar" />
+          <div class="profile-lines">
+            <span>Open to internships and junior developer work</span>
+            <span>Web development - ML - databases</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="metric-strip" aria-label="Profile highlights">
+        <div>
+          <strong>8</strong>
+          <span>Public GitHub repositories</span>
+        </div>
+        <div>
+          <strong>2027</strong>
+          <span>Expected CS graduation</span>
+        </div>
+        <div>
+          <strong>4</strong>
+          <span>Featured portfolio projects</span>
+        </div>
+        <div>
+          <strong>2025</strong>
+          <span>Backend internship experience</span>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2>Projects from my CV and GitHub</h2>
+          <p>
+            These projects show the range I am building: course platforms, PHP systems, and machine learning prediction
+            workflows.
+          </p>
+        </div>
+
+        <div class="project-toolbar" aria-label="Project filters">
+          <button class="filter-chip is-active" type="button" data-filter="all">
+            <i data-lucide="sparkles"></i>
+            All
+          </button>
+          <button class="filter-chip" type="button" data-filter="web">
+            <i data-lucide="monitor"></i>
+            Web
+          </button>
+          <button class="filter-chip" type="button" data-filter="ml">
+            <i data-lucide="brain-circuit"></i>
+            Machine learning
+          </button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-category="web">
+            <img src="assets/project-smart-academy.png" alt="Smart Academy course platform preview" />
+            <div class="project-content">
+              <div class="project-title-row">
+                <h3>Smart Academy</h3>
+                <span>JavaScript</span>
+              </div>
+              <p>
+                A responsive online learning platform for programming and computer science courses, with structured
+                course browsing and a cleaner learning interface.
+              </p>
+              <ul class="tag-list" aria-label="Smart Academy technology stack">
+                <li>JavaScript</li>
+                <li>EJS</li>
+                <li>CSS</li>
+                <li>Responsive UI</li>
+              </ul>
+              <a class="text-link" href="https://github.com/Osamahfm/Smart-Academy" target="_blank" rel="noreferrer">
+                View repository
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="web">
+            <img src="assets/project-edupredict.png" alt="EduPredict dashboard preview" />
+            <div class="project-content">
+              <div class="project-title-row">
+                <h3>Academic Performance Prediction System</h3>
+                <span>PHP</span>
+              </div>
+              <p>
+                A web-based system for predicting academic performance and identifying risk levels using attendance and
+                academic data, with backend logic, database design, and role-based access.
+              </p>
+              <ul class="tag-list" aria-label="Academic Performance Prediction System technology stack">
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>MVC</li>
+                <li>CRUD</li>
+              </ul>
+              <a
+                class="text-link"
+                href="https://github.com/Osamahfm/Academic-Performance-Prediction-System"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View repository
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ml">
+            <img src="assets/project-laptop-prices.png" alt="Laptop price prediction model preview" />
+            <div class="project-content">
+              <div class="project-title-row">
+                <h3>Laptop Prices Predictions</h3>
+                <span>Notebook</span>
+              </div>
+              <p>
+                A regression project that estimates laptop prices from hardware specifications, using preprocessing,
+                feature engineering, model training, and evaluation.
+              </p>
+              <ul class="tag-list" aria-label="Laptop Prices Predictions technology stack">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Scikit-learn</li>
+                <li>Regression</li>
+              </ul>
+              <a
+                class="text-link"
+                href="https://github.com/Osamahfm/Laptop-Prices-Predictions"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View repository
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ml">
+            <img src="assets/project-travel-insurance.png" alt="Travel insurance classification model preview" />
+            <div class="project-content">
+              <div class="project-title-row">
+                <h3>Travel Insurance Prediction</h3>
+                <span>ML</span>
+              </div>
+              <p>
+                A classification workflow that predicts whether a customer is likely to purchase travel insurance using
+                customer data, preprocessing, and model testing.
+              </p>
+              <ul class="tag-list" aria-label="Travel Insurance Prediction technology stack">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Scikit-learn</li>
+                <li>Classification</li>
+              </ul>
+              <a
+                class="text-link"
+                href="https://github.com/Osamahfm/Travel-Insurance-Prediction"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View repository
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="skills">
+        <div class="section-heading">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Technical skills</h2>
+          <p>My strongest current mix is web development, database-backed systems, and applied ML coursework.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <i data-lucide="code-2"></i>
+            <h3>Languages</h3>
+            <p>C++, Java, Python, HTML, CSS, JavaScript, PHP</p>
+          </article>
+          <article class="skill-card">
+            <i data-lucide="layout-template"></i>
+            <h3>Web Development</h3>
+            <p>Front-end development, responsive design, MVC architecture, backend workflows</p>
+          </article>
+          <article class="skill-card">
+            <i data-lucide="database"></i>
+            <h3>Data and Databases</h3>
+            <p>MySQL, database management systems, preprocessing, feature encoding</p>
+          </article>
+          <article class="skill-card">
+            <i data-lucide="git-branch"></i>
+            <h3>Tools and Concepts</h3>
+            <p>Git, GitHub, VS Code, Jira, OOP, data structures, algorithms, problem solving</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-heading">
+          <p class="eyebrow">Background</p>
+          <h2>Education and experience</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2023 - 2027</div>
+            <div>
+              <h3>B.Sc. in Computer Science</h3>
+              <p>Misr International University, Cairo. Coursework and projects across programming, web systems, software engineering, and machine learning.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Jul - Sep 2025</div>
+            <div>
+              <h3>Backend Development Intern</h3>
+              <p>Bebusiness, Cairo. Worked on practical software development workflows while growing teamwork, communication, and problem-solving skills.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">Apr - May 2026</div>
+            <div>
+              <h3>Build with AI: Masr Edition</h3>
+              <p>Google online event focused on AI tools, Google technologies, and practical applications of artificial intelligence.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let us build something useful.</h2>
+          <p>
+            I am interested in internships, junior software roles, and project work around web development, backend
+            systems, and applied machine learning.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:osamahamadafm@gmail.com">
+            <i data-lucide="mail"></i>
+            Email me
+          </a>
+          <a class="button button-secondary" href="https://github.com/Osamahfm" target="_blank" rel="noreferrer">
+            <i data-lucide="github"></i>
+            GitHub
+          </a>
+          <a
+            class="button button-secondary"
+            href="http://www.linkedin.com/in/osama-mohamed-61524428a"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i data-lucide="linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Designed and built for Osama Hamada.</span>
+      <span>&copy; <span data-year></span></span>
+    </footer>
+  </body>
+</html>
