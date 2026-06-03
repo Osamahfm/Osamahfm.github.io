@@ -1,8 +1,7 @@
-// API base URL — update this to your backend server address
-// For local development with Expo Go, use your machine's LAN IP
-// e.g., "http://192.168.1.100:8000"
-export const API_BASE_URL = "http://10.0.2.2:8000"; // Android emulator default
-export const WS_BASE_URL = "ws://10.0.2.2:8000";
+// API base URL
+// Using localhost for web compatibility
+export const API_BASE_URL = "http://localhost:8000"; 
+export const WS_BASE_URL = "ws://localhost:8000";
 
 // For iOS simulator, use http://localhost:8000
 // For Expo Go on physical device, use your machine's LAN IP

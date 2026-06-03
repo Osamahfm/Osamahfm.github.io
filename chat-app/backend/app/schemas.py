@@ -24,13 +24,13 @@ class Token(BaseModel):
 
 
 class TokenData(BaseModel):
-    user_id: Optional[uuid.UUID] = None
+    user_id: Optional[str] = None
 
 
 # ─── User Schemas ───────────────────────────────────────────────
 
 class UserOut(BaseModel):
-    id: uuid.UUID
+    id: str
     username: str
     email: EmailStr
     avatar_url: Optional[str] = None
@@ -43,7 +43,7 @@ class UserOut(BaseModel):
 
 class UserBrief(BaseModel):
     """Lightweight user representation for contact lists."""
-    id: uuid.UUID
+    id: str
     username: str
     avatar_url: Optional[str] = None
     is_online: bool = False
@@ -55,14 +55,14 @@ class UserBrief(BaseModel):
 # ─── Message Schemas ────────────────────────────────────────────
 
 class MessageCreate(BaseModel):
-    receiver_id: uuid.UUID
+    receiver_id: str
     content: str = Field(..., min_length=1, max_length=5000)
 
 
 class MessageOut(BaseModel):
-    id: uuid.UUID
-    sender_id: uuid.UUID
-    receiver_id: uuid.UUID
+    id: str
+    sender_id: str
+    receiver_id: str
     content: str
     is_read: bool
     created_at: datetime
@@ -75,16 +75,16 @@ class MessageOut(BaseModel):
 class WSMessageIn(BaseModel):
     """Incoming WebSocket message from client."""
     type: str = "message"
-    receiver_id: uuid.UUID
+    receiver_id: str
     content: str = Field(..., min_length=1, max_length=5000)
 
 
 class WSMessageOut(BaseModel):
     """Outgoing WebSocket message to client."""
     type: str = "message"
-    id: uuid.UUID
-    sender_id: uuid.UUID
-    receiver_id: uuid.UUID
+    id: str
+    sender_id: str
+    receiver_id: str
     content: str
     created_at: datetime
 
@@ -94,5 +94,5 @@ class WSMessageOut(BaseModel):
 class WSStatusOut(BaseModel):
     """Online status notification."""
     type: str = "status"
-    user_id: uuid.UUID
+    user_id: str
     is_online: bool

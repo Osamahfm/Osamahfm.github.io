@@ -75,9 +75,8 @@ async def websocket_chat(websocket: WebSocket):
                     )
                     continue
 
-                try:
-                    receiver_id = uuid.UUID(receiver_id_str)
-                except ValueError:
+                receiver_id = receiver_id_str.strip()
+                if len(receiver_id) != 36:
                     await websocket.send_json(
                         {"type": "error", "detail": "Invalid receiver_id format"}
                     )

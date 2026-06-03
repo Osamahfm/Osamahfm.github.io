@@ -14,7 +14,7 @@ router = APIRouter(prefix="/api/messages", tags=["Messages"])
 
 @router.get("/{user_id}", response_model=list[MessageOut])
 async def get_message_history(
-    user_id: uuid.UUID,
+    user_id: str,
     limit: int = Query(default=50, ge=1, le=200),
     offset: int = Query(default=0, ge=0),
     current_user: User = Depends(get_current_user),
