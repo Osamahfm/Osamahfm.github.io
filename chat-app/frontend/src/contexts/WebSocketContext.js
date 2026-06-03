@@ -17,12 +17,14 @@ export function WebSocketProvider({ children }) {
   const reconnectTimeoutRef = useRef(null);
   const [isConnected, setIsConnected] = useState(false);
   const [onlineUsers, setOnlineUsers] = useState({});
-  const listenersRef = useRef(new Map());
+  const listenersRef = useRef({});
 
   // ─── Subscribe to messages for a specific conversation ─
   const addMessageListener = useCallback((key, callback) => {
-    listenersRef.current.set(key, callback);
-    return () => listenersRef.current.delete(key);
+    listenersRef.current[key] = callback;
+    return () => {
+      delete listenersRef.current[key];
+    };
   }, []);
 
   // ─── Send a message via WebSocket ──────────────────────
@@ -60,7 +62,7 @@ export function WebSocketProvider({ children }) {
 
         if (data.type === "message") {
           // Notify all listeners
-          listenersRef.current.forEach((callback) => callback(data));
+          Object.values(listenersRef.current).forEach((callback) => callback(data));
         } else if (data.type === "status") {
           setOnlineUsers((prev) => {
             const updated = { ...prev };
