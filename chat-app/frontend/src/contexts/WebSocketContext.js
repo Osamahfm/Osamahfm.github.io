@@ -16,7 +16,7 @@ export function WebSocketProvider({ children }) {
   const wsRef = useRef(null);
   const reconnectTimeoutRef = useRef(null);
   const [isConnected, setIsConnected] = useState(false);
-  const [onlineUsers, setOnlineUsers] = useState(new Set());
+  const [onlineUsers, setOnlineUsers] = useState({});
   const listenersRef = useRef(new Map());
 
   // ─── Subscribe to messages for a specific conversation ─
@@ -63,11 +63,11 @@ export function WebSocketProvider({ children }) {
           listenersRef.current.forEach((callback) => callback(data));
         } else if (data.type === "status") {
           setOnlineUsers((prev) => {
-            const updated = new Set(prev);
+            const updated = { ...prev };
             if (data.is_online) {
-              updated.add(data.user_id);
+              updated[data.user_id] = true;
             } else {
-              updated.delete(data.user_id);
+              delete updated[data.user_id];
             }
             return updated;
           });

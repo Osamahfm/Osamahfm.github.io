@@ -1,7 +1,7 @@
 // API base URL
-// Using localhost for web compatibility
-export const API_BASE_URL = "http://localhost:8000"; 
-export const WS_BASE_URL = "ws://localhost:8000";
+// Using local network IP for Expo Go physical device testing
+export const API_BASE_URL = "http://192.168.172.30:8000"; 
+export const WS_BASE_URL = "ws://192.168.172.30:8000";
 
 // For iOS simulator, use http://localhost:8000
 // For Expo Go on physical device, use your machine's LAN IP

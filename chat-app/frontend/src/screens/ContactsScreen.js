@@ -104,7 +104,7 @@ export default function ContactsScreen({ navigation }) {
           renderItem={({ item }) => (
             <ContactItem
               user={item}
-              isOnline={onlineUsers.has(item.id) || item.is_online}
+              isOnline={!!onlineUsers[item.id] || item.is_online}
               onPress={() => openChat(item)}
             />
           )}
